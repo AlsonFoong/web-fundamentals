@@ -1,0 +1,118 @@
+/* Variables */
+:root {
+    --catalog-item-border-radius: 15px;
+
+    /* Mobile Configuration */
+    --catalog-item-height: 180px;
+    --catalog-item-width: 240px;
+    --catalog-header-font-size: 18px;
+
+    /* Desktop Configuration */
+    --catalog-item-height-desktop: 300px;
+    --catalog-item-width-desktop: 400px;
+    --catalog-header-font-size-desktop: 24px;
+
+    /* Default Colors */
+    --search-bar-color: var(--white-sand);
+    --search-bar-text-color: var(--dark-black);
+    --catalog-item-color: var(--blue-wave-light);
+}
+
+/* Dark Mode Configuration */
+.dark-mode {
+    --catalog-item-color: var(--lights-out);
+}
+
+/* Catalog and Search */
+
+.catalog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0 30px 0;
+}
+
+.catalog-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#catalog-search {
+    max-height: 30px;
+    width: var(--catalog-item-width);
+    background-color: var(--search-bar-color);
+    color: var(--search-bar-text-color);
+    font-family: var(--heading-font);
+    padding: 15px 0 15px 20px;
+    border: 1px solid var(--heading-color);
+    border-radius: 15px;
+}
+
+/* Catalog Filter */
+
+.catalog-container .search-filter {
+    width: 24px;
+    height: 24px;
+}
+
+/* TODO: Implement filter utility */
+
+/* Catalog Layout */
+
+.catalog-item-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 0 30px 0;
+    column-gap: 15px;
+    row-gap: 25px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Catalog Items */
+
+.catalog-item {
+    width: var(--catalog-item-width);
+    background-color: var(--catalog-item-color);
+    border-radius: var(--catalog-item-border-radius);
+}
+
+.catalog-item img {
+    height: calc(var(--catalog-item-height) - 30%);
+    width: var(--catalog-item-width);
+    border-radius: var(--catalog-item-border-radius);
+}
+
+h2 {
+    margin: 5px 0 0 10px;
+    font-size: var(--catalog-header-font-size);
+}
+
+.catalog-item p {
+    margin: 0;
+    padding: 10px;
+}
+
+/* Desktop */
+@media (width > 768px) {
+    .catalog-item {
+        width: var(--catalog-item-width-desktop);
+    }
+
+    .catalog-item img {
+        height: var(--catalog-item-height-desktop);
+        width: 100%;
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: var(--catalog-header-font-size-desktop);
+    }
+}
