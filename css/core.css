@@ -266,3 +266,87 @@ button img {
         display: none !important;
     }
 }
+
+/* TEAM PAGE */
+.team-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.team-intro {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background: var(--card-bg, #fff);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #FFD166; 
+}
+
+.team-card h3 {
+    margin: 10px 0 5px 0;
+}
+
+.team-card .role {
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.team-card ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px 0;
+}
+
+.team-card ul li::before {
+    content: "✓ ";
+    color: #06D6A0; 
+}
+
+.portfolio-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FFD166;
+    color: #000;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.portfolio-btn:hover {
+    background: #FFC300;
+}
+
+/* Dark mode support */
+.dark-mode .team-card {
+    background: #2a2a2a;
+    color: #eee;
+}
