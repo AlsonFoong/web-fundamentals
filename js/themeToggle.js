@@ -2,10 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
 
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'dark') {
-        html.classList.add('dark-mode');
-    }
+    // On initial page load, theme is handled by inline JS to prevent flash of inaccurate color theme:
+    // <script>
+    //     if (localStorage.getItem('theme') === 'dark') {
+    //         document.documentElement.classList.add('dark-mode')
+    //     }
+    // </script>
 
     // Click to toggle
     themeToggle.addEventListener('click', function() {

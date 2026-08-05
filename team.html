@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="./css/team.css">
     <script src="./js/themeToggle.js"></script>
     <script src="./js/menu.js" defer></script>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode')
+        }
+    </script>
     <title>Vividly - About Us</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
