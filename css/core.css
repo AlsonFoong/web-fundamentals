@@ -113,6 +113,29 @@ header nav {
     align-items: center;
 }
 
+/* Add ellipsis to username when viewport size is too small */
+
+header {
+    overflow: hidden;
+}
+
+#header-menu {
+    overflow: hidden;
+}
+
+#header-utilities {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+#login {
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* End of ellipsis logic */
+
 /* Header Menu */
 
 #menu-button {

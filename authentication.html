@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="icon" href=""> -->
     <link rel="stylesheet" href="./css/core.css">
+    <link rel="stylesheet" href="./css/authentication.css">
     <script src="./js/themeToggle.js"></script>
     <script src="./js/menu.js" defer></script>
+    <script src="./js/authentication.js" defer></script>
+    <script src="./js/session.js"></script>
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode')
@@ -66,28 +69,117 @@
         </div>
 
         <main>
-            <section>
-                <h1>Login (Or sign up!)</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dui felis, lacinia vel sem eget,
-                    ultrices pharetra purus. Duis lacus nunc, egestas sed hendrerit vel, vehicula vel massa. Vivamus
-                    odio ante, dapibus a odio sit amet, egestas ornare tortor. In ac mauris purus. Aliquam nisi odio,
-                    auctor non risus vel, feugiat congue eros. Praesent odio libero, elementum non elit ac, congue
-                    bibendum purus. Quisque porta et ex mollis efficitur. Sed volutpat finibus nulla, nec faucibus mi
-                    blandit non.
+            <section id="auth-section">
 
-                    Duis in magna at lacus suscipit consequat. Aenean vestibulum tincidunt eros sed fermentum. Sed sed
-                    ultricies leo. Nunc nec augue nec mi tempus iaculis. Nunc risus turpis, dapibus nec fringilla a,
-                    fermentum ac magna. Quisque et est nisi. Sed id pellentesque odio.
-                </p>
+                <div id="login-box">
+                    <h1>Login</h1>
+
+                    <form id="login-form" novalidate>
+                        <div class="form-field">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" name="email" required>
+                            <span class="error" id="login-email-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" required>
+                            <span class="error" id="login-password-error" aria-live="polite"></span>
+                        </div>
+
+                        <span class="error" id="login-general-error" aria-live="polite"></span>
+
+                        <button type="submit" class="auth-btn">Login</button>
+                    </form>
+
+                    <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+                </div>
+
+                <div id="signup-box" hidden>
+                    <p><a href="#" id="show-login">&larr; Back to login</a></p>
+                    <h1>Create your account</h1>
+
+                    <div id="signup-progress" aria-label="Registration progress">
+                        <span class="progress-dot active" id="progress-step-1" aria-current="step"></span>
+                        <span class="progress-dot" id="progress-step-2"></span>
+                        <span class="progress-dot" id="progress-step-3"></span>
+                    </div>
+
+                    <form id="signup-form" novalidate>
+
+                        <fieldset class="form-step active" id="step-1" data-step="1">
+                            <legend>Account Info</legend>
+
+                            <div class="form-field">
+                                <label for="signup-name">Full Name</label>
+                                <input type="text" id="signup-name" name="name" required>
+                                <span class="error" id="signup-name-error" aria-live="polite"></span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="signup-email">Email</label>
+                                <input type="email" id="signup-email" name="email" required>
+                                <span class="error" id="signup-email-error" aria-live="polite"></span>
+                            </div>
+
+                            <button type="button" class="next-step auth-btn" data-next="2">Next</button>
+                        </fieldset>
+
+                        <fieldset class="form-step" id="step-2" data-step="2" hidden>
+                            <legend>Password</legend>
+
+                            <div class="form-field">
+                                <label for="signup-password">Password</label>
+                                <input type="password" id="signup-password" name="password" required>
+                                <span class="error" id="signup-password-error" aria-live="polite"></span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="signup-confirm-password">Confirm Password</label>
+                                <input type="password" id="signup-confirm-password" name="confirmPassword" required>
+                                <span class="error" id="signup-confirm-password-error" aria-live="polite"></span>
+                            </div>
+
+                            <button type="button" class="prev-step auth-btn" data-prev="1">Back</button>
+                            <button type="button" class="next-step auth-btn" data-next="3">Next</button>
+                        </fieldset>
+
+                        <fieldset class="form-step" id="step-3" data-step="3" hidden>
+                            <legend>Confirm Your Details</legend>
+
+                            <div id="signup-review">
+                                <p><strong>Name:</strong> <span id="review-name"></span></p>
+                                <p><strong>Email:</strong> <span id="review-email"></span></p>
+                            </div>
+
+                            <div class="form-field">
+                                <label>
+                                    <input type="checkbox" id="signup-terms" name="terms" required>
+                                    I agree to the terms and conditions
+                                </label>
+                                <span class="error" id="signup-terms-error" aria-live="polite"></span>
+                            </div>
+
+                            <button type="button" class="prev-step auth-btn" data-prev="2">Back</button>
+                            <button type="submit" class="auth-btn">Create Account</button>
+                        </fieldset>
+
+                    </form>
+                </div>
+
             </section>
+
+            <section id="welcome-box" hidden>
+                <h1>Welcome back, <span id="welcome-name"></span>!</h1>
+                <p><a href="./index.html">Go to Home</a></p>
+            </section>
+
         </main>
 
         <footer>
             <div id="footer-image" aria-hidden="true"></div>
         </footer>
     </div>
-    <script src="/js/themeToggle.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,185 @@
+main:has(#auth-section) {
+    padding: 50px 0;
+}
+
+#auth-section:not([hidden]),
+#welcome-box:not([hidden]) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#login-box,
+#signup-box,
+#welcome-box {
+    background-color: var(--header-color);
+    border-radius: 75px;
+    padding: 24px 40px;
+    box-shadow: 0 2.5px 15px -3px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+#welcome-box {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+#login-box h1, #signup-box h1, #welcome-box h1 {
+    text-align: center;
+    margin: 0 0 16px;
+}
+
+#welcome-box h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.form-field label {
+    font-family: var(--body-font);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.form-field label:has(input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="password"] {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    padding: 7px 12px;
+    border-radius: 10px;
+    border: 2px solid var(--blue-wave-light);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: var(--blue-wave);
+}
+
+.error {
+    display: block;
+    min-height: 1em;
+    margin-top: 2px;
+    color: #c0392b;
+    font-size: 0.8rem;
+}
+
+.dark-mode .error {
+    color: #ff7b6b;
+}
+
+#login-general-error {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.auth-btn {
+    display: block;
+    width: 100%;
+    font-family: var(--heading-font);
+    font-weight: var(--heading-weight);
+    font-size: 1rem;
+    color: var(--sand);
+    background-color: var(--blue-wave);
+    border-radius: 10px;
+    padding: 9px;
+    margin-top: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.auth-btn:hover {
+    background-color: var(--blue-wave-dark);
+}
+
+.dark-mode .auth-btn {
+    color: var(--dark-out);
+    background-color: var(--blue-wave-light);
+}
+
+.dark-mode .auth-btn:hover {
+    background-color: var(--washed-white);
+}
+
+
+.auth-btn.prev-step {
+    background-color: transparent;
+    color: var(--blue-wave);
+    border: 2px solid var(--blue-wave-light);
+    margin-bottom: 6px;
+}
+
+.auth-btn.prev-step:hover {
+    background-color: var(--blue-wave-light);
+    color: var(--dark-black);
+}
+
+.dark-mode .auth-btn.prev-step {
+    color: var(--blue-wave-light);
+    border-color: var(--blue-wave);
+    background-color: transparent;
+}
+
+.dark-mode .auth-btn.prev-step:hover {
+    background-color: var(--blue-wave);
+    color: var(--washed-white);
+}
+
+#login-box > p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+#signup-box > p:first-child {
+    margin-top: 0;  
+}
+
+#signup-progress {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--blue-wave-light);
+    transition: background-color 0.2s ease;
+}
+
+.progress-dot.active {
+    background-color: var(--blue-wave);
+}
+
+
+#signup-review p {
+    margin: 8px 0;
+}
+
+#welcome-box p {
+    margin-top: 10px;
+}
