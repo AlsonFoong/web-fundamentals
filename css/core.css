@@ -226,6 +226,32 @@ h1, h2, h3, h4, h5 {
     font-weight: var(--heading-weight);
 }
 
+#theme-notification {
+    margin-top: 30px;
+    width: 80vw;
+    max-width: fit-content;
+    padding: 5px 10px;
+    border-radius: 8px;
+    justify-self: center;
+    text-align: center;
+    background-color: var(--modal-color);
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
+
+#theme-notification p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+#theme-notification button {
+    height: 24px;
+    width: 24px;
+    border-radius: 15px;
+    background-color: var(--lights-out);
+}
+
 a {
     color: var(--anchor-color);
     font-family: var(--anchor-font);
@@ -290,5 +316,9 @@ button img {
 
     #vertical-menu {
         display: none !important;
+    }
+
+    #theme-notification {
+        margin-top: 0;
     }
 }
