@@ -1,0 +1,306 @@
+/* ===== Custom properties (CSS variables) ===== */
+:root {
+    --bg: #0d1117;
+    --bg-raised: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-bright: #f0f6fc;
+    --muted: #6e7681;
+    --accent: #4c8bf5;
+    --accent-dim: #1f4e96;
+    --ok: #3fb950;
+    --warn: #d29922;
+    --danger: #f85149;
+
+    --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+
+    --radius: 6px;
+    --gap: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    line-height: 1.6;
+}
+
+/* ===== Terminal window shell ===== */
+#terminal {
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 20px 60px -20px #000000aa;
+}
+
+#title-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-raised);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+}
+
+#title-bar-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red { background-color: #ff5f57; }
+.dot-yellow { background-color: #febc2e; }
+.dot-green { background-color: #28c840; }
+
+#title-bar-text {
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+#terminal-body {
+    padding: 32px clamp(20px, 5vw, 56px);
+}
+
+/* ===== Shared block/prompt styling ===== */
+.term-block {
+    margin-bottom: 56px;
+}
+
+.term-block:last-child {
+    margin-bottom: 0;
+}
+
+.prompt-line {
+    margin: 0 0 16px;
+    color: var(--text);
+}
+
+.prompt {
+    color: var(--ok);
+    margin-right: 8px;
+}
+
+/* ===== Hero / whoami ===== */
+#section-whoami h1 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: var(--text-bright);
+    letter-spacing: -0.02em;
+}  
+
+.bio {
+    max-width: 65ch;
+    color: var(--text);
+}
+
+
+.log-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.log-entry {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    border-left: 2px solid var(--border);
+    padding-left: 16px;
+}
+
+.log-date {
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.log-detail strong {
+    color: var(--text-bright);
+}
+
+.skill-meter {
+    display: grid;
+    grid-template-columns: 140px 1fr 48px;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.skill-name {
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.meter-track {
+    background-color: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    height: 14px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: var(--radius);
+    background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+    animation: fill-meter 1.2s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* each .skill-meter sets --pct inline; the animation reads it via the parent */
+.skill-meter .meter-fill {
+    --target: var(--pct);
+}
+
+@keyframes fill-meter {
+    from { width: 0%; }
+    to { width: var(--target); }
+}
+
+.skill-pct {
+    text-align: right;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--gap);
+}
+
+.project-card {
+    background-color: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.project-card h2 {
+    margin: 0 0 4px;
+    font-size: 1.1rem;
+    color: var(--text-bright);
+}
+
+.project-tag {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+
+.project-card p:last-child {
+    margin: 0;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+
+
+#cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-raised);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    font-family: var(--mono);
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#cv-button:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.cv-prompt {
+    color: var(--ok);
+}
+
+#cv-button:hover .cv-prompt {
+    color: var(--bg);
+}
+
+@media (width < 640px) {
+    .skill-meter {
+        grid-template-columns: 100px 1fr 40px;
+        gap: 10px;
+    }
+
+    #terminal-body {
+        padding: 24px 16px;
+    }
+}
+
+@media print {
+    body {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    #terminal {
+        max-width: none;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    #title-bar {
+        display: none;
+    }
+
+    .term-block {
+        margin-bottom: 24px;
+        break-inside: avoid;
+    }
+
+    .prompt {
+        color: #000000;
+    }
+
+    .meter-fill {
+        animation: none;
+        width: var(--target);
+        background: #000000;
+    }
+
+    .project-card {
+        border: 1px solid #999999;
+        background: none;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    #cv-button {
+        border: 1px solid #000000;
+        color: #000000;
+        background: none;
+    }
+}

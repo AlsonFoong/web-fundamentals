@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./portfolio.css">
+  <script src="./portfolio.js" defer></script>
+  <title>Farhan - Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="terminal">
+
+    <div id="title-bar">
+      <div id="title-bar-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span id="title-bar-text">farhan@sunway: ~</span>
+    </div>
+
+    <main id="terminal-body">
+
+      <section class="term-block" id="section-whoami">
+        <p class="prompt-line"><span class="prompt">farhan@sunway:~$</span> whoami</p>
+        <h1>Farhan Rajab</h1>
+        <p class="bio">
+          Heya I'm a 19 year old studying Computer Science at Sunway University. 
+          So far, I've studied C, Python, HTML/CSS/JavaScript and some Java.
+          I'm efficient, open-minded and love to acquire new knowledge or skills.
+
+        </p>
+      </section>
+
+      <section class="term-block" id="section-education">
+        <p class="prompt-line"><span class="prompt">farhan@sunway:~$</span> cat education.log</p>
+        <ul class="log-list">
+          <li class="log-entry">
+            <span class="log-date">[2023]</span>
+            <span class="log-detail">
+              <strong>IGCSE</strong> — 3 Sciences, Maths, English
+            </span>
+          </li>
+          <li class="log-entry">
+            <span class="log-date">[2024 - 2025]</span>
+            <span class="log-detail">
+              <strong>A Levels</strong> — Physics, Chemistry, Maths
+            </span>
+          </li>
+          <li class="log-entry">
+            <span class="log-date">[September 2025 - Present]</span>
+            <span class="log-detail">
+              <strong>42 Kuala Lumpur</strong> — Software Engineering Program 
+            </span>
+          </li>
+          <li class="log-entry">
+            <span class="log-date">[February 2026 - Present]</span>
+            <span class="log-detail">
+              <strong>Sunway University</strong> — Bachelors of Computer Science
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="term-block" id="section-skills">
+        <p class="prompt-line"><span class="prompt">farhan@sunway:~$</span> top -skills</p>
+
+        <div class="skill-meter" style="--pct: 87%;">
+          <span class="skill-name">Python</span>
+          <div class="meter-track">
+            <div class="meter-fill"></div>
+          </div>
+          <span class="skill-pct">87%</span>
+        </div>
+
+        <div class="skill-meter" style="--pct: 72%;">
+          <span class="skill-name">C</span>
+          <div class="meter-track">
+            <div class="meter-fill"></div>
+          </div>
+          <span class="skill-pct">72%</span>
+        </div>
+
+        <div class="skill-meter" style="--pct: 65%;">
+          <span class="skill-name">HTML / CSS</span>
+          <div class="meter-track">
+            <div class="meter-fill"></div>
+          </div>
+          <span class="skill-pct">65%</span>
+        </div>
+
+        <div class="skill-meter" style="--pct: 44%;">
+          <span class="skill-name">Java</span>
+          <div class="meter-track">
+            <div class="meter-fill"></div>
+          </div>
+          <span class="skill-pct">44%</span>
+        </div>
+      </section>
+
+
+      <section class="term-block" id="section-projects">
+        <p class="prompt-line"><span class="prompt">farhan@sunway:~$</span> ls ./projects</p>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <h2><a href="https://github.com/farh-7/lib/tree/main/ft_printf" target="_blank">ft_printf</a></h2>
+            <p class="project-tag">// Recreation of C's printf()</p>
+            <p>
+              A replica of the C standard library's function printf() coded from scratch. 
+              It parses a format string and handles a variable number of arguments to print formatted text to the standard output.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h2><a href="https://colab.research.google.com/drive/1gfZWtsDpn4TTXoazWNJlyn_b187YfTWc?usp=sharing" target="_blank">
+                Student Management System</a></h2>
+            <p class="project-tag">// Front-end python-written </p>
+            <p>
+              The front end of a little student management system completed as the final project for a previous university class.
+              Allows students to add/remove students and enroll/drop courses as well as view information for them both.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h2><a href="resources/portfolio_preview.png" target="_blank">Portfolio Page</a></h2>
+            <p class="project-tag">// Personal portfolio with an attached CV</p>
+            <p>
+              A personal portfolio created as part of an assignment I'm currently working on for my Web Fundamentals class in university.
+            </p>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="term-block" id="section-cv">
+        <p class="prompt-line"><span class="prompt">farhan@sunway:~$</span> ./download-cv.sh</p>
+        <a id="cv-button" href="resources/cv.pdf" target="_blank" rel="noopener">
+          <span class="cv-prompt">$</span> open cv.pdf
+        </a>
+      </section>
+
+    </main>
+  </div>
+</body>
+
+</html>
