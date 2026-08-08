@@ -141,6 +141,11 @@ h2 {
     padding: 10px;
 }
 
+.catalog-item-purchase-bar {
+    justify-self: right;
+    padding: 0 15px 10px 0;
+}
+
 /* Desktop */
 @media (width > 768px) {
     .catalog-item {

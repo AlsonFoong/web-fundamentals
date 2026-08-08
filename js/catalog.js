@@ -5,11 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchFilter = document.getElementById('search-filter')
     const searchFilterResetButton = document.getElementById('search-filter-reset')
     const searchFilterDropdown = document.getElementById('dropdown-menu')
+    const catalogItemContainer = document.getElementById('catalog-item-container')
     const catalogItems = document.querySelectorAll('#catalog-item-container > li')
+    const originalItemOrder = Array.from(catalogItems)
 
     let shown = false
     let query = ''
     let filters = []
+    let currentSort = ''
 
     searchFilter.addEventListener('click', (e) => {
         if (!shown) {
@@ -38,24 +41,75 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    function getItemData(item, key) {
+        if (item.dataset[key]) {
+            return item.dataset[key]
+        }
+        return 0
+    }
+
+    function sortItems() {
+        // catalogItems is not dynamic, so directly access children
+        const itemsArray = Array.from(catalogItemContainer.children)
+
+        if (!currentSort) {
+            originalItemOrder.forEach(item => catalogItemContainer.appendChild(item))
+            return
+        }
+
+        itemsArray.sort((a, b) => {
+            const priceA = getItemData(a, 'price')
+            const priceB = getItemData(b, 'price')
+            const nightsA = getItemData(a, 'nights')
+            const nightsB = getItemData(b, 'nights')
+
+            switch (currentSort) {
+                case 'price-asc':
+                    return priceA - priceB
+                case 'price-desc':
+                    return priceB - priceA
+                case 'nights-asc':
+                    return nightsA - nightsB
+                case 'nights-desc':
+                    return nightsB - nightsA
+                default:
+                    return 0
+            }
+        })
+
+        itemsArray.forEach(item => catalogItemContainer.appendChild(item))
+    }
+
     searchContainer.addEventListener('input', (e) => {
         if (e.target === searchBar) {
             query = searchBar.value.toLowerCase().trim()
-        } else {
-            // Must be a checkbox
+            applyFilters()
+
+        } else if (e.target.type === 'checkbox') {
             const value = e.target.value.toLowerCase().trim()
+
             if (e.target.checked) {
                 filters.push(value)
             } else {
-                filters.splice(filters.indexOf(value), 1)
+                const index = filters.indexOf(value)
+                if (index > -1) {
+                    filters.splice(index, 1)
+                }
             }
+
+            applyFilters()
+
+        } else if (e.target.name === 'sort') {
+            currentSort = e.target.value
+            sortItems()
         }
-        applyFilters()
     })
 
     searchFilterResetButton.addEventListener('click', (e) => {
         query = ''
         filters = []
+        currentSort = ''
         applyFilters()
+        sortItems()
     })
 })
