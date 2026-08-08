@@ -21,6 +21,14 @@ main:has(#auth-section) {
     box-sizing: border-box;
 }
 
+#signup-box {
+    padding-bottom: 50px;
+}
+
+#welcome-box {
+    padding: 40px;
+}
+
 #welcome-box {
     max-width: 500px;
     margin: 0 auto;
@@ -38,6 +46,11 @@ main:has(#auth-section) {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
+}
+
+.form-step {
+    border: 1px solid var(--heading-color);
+    padding: 20px;
 }
 
 .form-field {
