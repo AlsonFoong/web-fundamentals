@@ -72,78 +72,71 @@
             <section>
                 <h1>Have a look at our favorite travel hotspots!</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dui felis, lacinia vel sem eget,
-                    ultrices pharetra purus. Duis lacus nunc, egestas sed hendrerit vel, vehicula vel massa. Vivamus
-                    odio ante, dapibus a odio sit amet, egestas ornare tortor. In ac mauris purus. Aliquam nisi odio,
-                    auctor non risus vel, feugiat congue eros. Praesent odio libero, elementum non elit ac, congue
-                    bibendum purus. Quisque porta et ex mollis efficitur. Sed volutpat finibus nulla, nec faucibus mi
-                    blandit non.
-
-                    Duis in magna at lacus suscipit consequat. Aenean vestibulum tincidunt eros sed fermentum. Sed sed
-                    ultricies leo. Nunc nec augue nec mi tempus iaculis. Nunc risus turpis, dapibus nec fringilla a,
-                    fermentum ac magna. Quisque et est nisi. Sed id pellentesque odio.
+                    Welcome to our handpicked travel catalog! Journey through remarkable landscapes, world-renowned
+                    historical monuments, and hidden coastal paradises carefully selected to inspire your next journey.
+                    Use the search bar and filter controls below to seamlessly browse destinations by continent,
+                    cultural significance, or type. Whether you are planning a memorable family vacation, an immersive
+                    historical exploration, or a relaxing tropical retreat, our curated collection highlights
+                    the distinct beauty, vibrant culture, and unique charm of each location to help you plan your ideal
+                    getaway.
                 </p>
 
-                <div class="catalog-container">
-                    <search class="catalog-search-container">
-                        <form class="catalog-form" role="search">
+                <div id="catalog-container">
+                    <search id="catalog-search-container">
+                        <form id="catalog-form" role="search">
                             <label for="catalog-search" class="visually-hidden">Search travel catalog</label>
                             <input id="catalog-search" class="search-bar" type="search" placeholder="Search"
                                 autocomplete="off">
 
-                            <div class="dropdown-container">
-                                <button class="search-filter" type="button" aria-label="Filter catalog items">
+                            <div id="dropdown-container">
+                                <button id="search-filter" type="button" aria-label="Filter catalog items">
                                     <img src="./assets/filter.svg" alt="" aria-hidden="true">
                                 </button>
 
-                                <div class="dropdown-menu">
-                                    <!-- TODO: Implement filter utility -->
+                                <div id="dropdown-menu">
+                                    <div id="filter-header">
+                                        <h3>Filter</h3>
+                                        <button id="search-filter-reset" type="reset">Reset</button>
+                                    </div>
+
+                                    <h4>Region</h4>
+                                    <label><input type="checkbox" value="asia" name="region">Asia</label>
+                                    <label><input type="checkbox" value="oceania" name="region">Oceania</label>
+                                    <label><input type="checkbox" value="europe" name="region">Europe</label>
+                                    <label><input type="checkbox" value="north america" name="region">North
+                                        America</label>
+                                    <label><input type="checkbox" value="africa" name="region">Africa</label>
+
+                                    <h4>Category</h4>
+                                    <label><input type="checkbox" value="beach" class="tag-filter">Beach</label>
+                                    <label><input type="checkbox" value="monument" class="tag-filter">Monument</label>
+                                    <label><input type="checkbox" value="historical"
+                                            class="tag-filter">Historical</label>
+                                    <label><input type="checkbox" value="culture" class="tag-filter">Culture</label>
+                                    <label><input type="checkbox" value="architecture"
+                                            class="tag-filter">Architecture</label>
+                                    <label><input type="checkbox" value="fun" class="tag-filter">Fun</label>
+                                    <label><input type="checkbox" value="family" class="tag-filter">Family</label>
                                 </div>
                             </div>
                         </form>
                     </search>
 
-                    <ul class="catalog-item-container">
-                        <li data-tags="asia southeast asia india uttar pradesh agra monument historical">
+                    <ul id="catalog-item-container">
+                        <li data-tags="oceania pacific cook islands aitutaki arutanga beach fun family">
+                            <article class="catalog-item">
+                                <img src="./assets/catalog/aitutaki_cook_islands.jpg" alt="Picture of Aitutaki">
+                                <h2>Aitutaki, Cook Islands</h2>
+                                <p>A serene South Pacific atoll famed for its central main island surrounded by a vast
+                                    turquoise lagoon and pristine uninhabited islets.</p>
+                            </article>
+                        </li>
+                        <li data-tags="asia south asia india uttar pradesh agra monument historical">
                             <article class="catalog-item">
                                 <img src="./assets/catalog/taj_mahal.webp" alt="Picture of the Taj Mahal">
                                 <h2>Taj Mahal, India</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dui felis, lacinia
-                                    vel sem eget, ultrices pharetra purus. Duis lacus nunc, egestas sed hendrerit vel,
-                                    vehicula vel massa. Vivamus odio ante, dapibus a odio sit amet, egestas ornare
-                                    tortor.
-                                </p>
-                            </article>
-                        </li>
-                        <li data-tags="europe western europe france ile de france paris monument culture">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/eiffel_tower.jpg" alt="Picture of the Eiffel Tower">
-                                <h2>Eiffel Tower, France</h2>
-                                <p></p>
-                            </article>
-                        </li>
-                        <li data-tags="europe southern europe italy lazio rome monument historical">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/roman_colosseum.jpg" alt="Picture of the Roman Colesseum">
-                                <h2>Roman Colosseum, Italy</h2>
-                                <p></p>
-                            </article>
-                        </li>
-                        <li data-tags="oceania australia new south wales sydney monument culture">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/sydney_opera_house.png"
-                                    alt="Picture of the Sydney Opera House">
-                                <h2>Sdyney Opera House, Australia</h2>
-                                <p></p>
-                            </article>
-                        </li>
-                        <li data-tags="north america usa california san francisco monument architecture">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/golden_gate_bridge.jpg"
-                                    alt="Picture of the Golden Gate Bridge">
-                                <h2>Golden Gate Bridge, USA</h2>
-                                <p></p>
+                                <p>An ivory-white marble mausoleum in Agra built between 1631 and 1653 by Mughal Emperor
+                                    Shah Jahan in memory of his favorite wife, Mumtaz Mahal.</p>
                             </article>
                         </li>
                         <li data-tags="asia southeast asia malaysia kuala lumpur monument architecture">
@@ -151,52 +144,74 @@
                                 <img src="./assets/catalog/petronas_twin_towers.jpg"
                                     alt="Picture of the Petronas Twin Towers">
                                 <h2>Petronas Twin Towers, Malaysia</h2>
-                                <p></p>
-                            </article>
-                        </li>
-                        <li data-tags="asia southeast asia malaysia selangor gombak monument culture">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/batu_caves.jpg" alt="Picture of Batu Caves">
-                                <h2>Batu Caves, Malaysia</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dui felis, lacinia
-                                    vel sem eget, ultrices pharetra purus. Duis lacus nunc, egestas sed hendrerit vel,
-                                    vehicula vel massa. Vivamus odio ante, dapibus a odio sit amet, egestas ornare
-                                    tortor.
-                                </p>
-                            </article>
-                        </li>
-                        <li data-tags="europe central europe germany berlin monument historical">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/brandenburg_gate.jpg" alt="Picture of Brandenburg Gate">
-                                <h2>Brandenburg Gate, Germany</h2>
-                                <p></p>
-                            </article>
-                        </li>
-                        <li data-tags="oceania australia queensland whitsundays beach fun family">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/whitehaven_beach.jpg" alt="Picture of Whitehaven Beach">
-                                <h2>Whitehaven Beach, Australia</h2>
-                                <p></p>
+                                <p>Majestic 88-story twin skyscrapers in Kuala Lumpur that held the title of the world's
+                                    tallest building from 1998 to 2004.</p>
                             </article>
                         </li>
                         <li data-tags="africa southern africa south africa western cape cape town beach fun family">
                             <article class="catalog-item">
                                 <img src="./assets/catalog/boulders_beach.jpg" alt="Picture of Boulders Beach">
                                 <h2>Boulders Beach, South Africa</h2>
-                                <p></p>
+                                <p>A sheltered beach near Cape Town surrounded by massive granite boulders and home to a
+                                    thriving wild colony of African penguins.</p>
                             </article>
                         </li>
-                        <li data-tags="oceania pacific cook islands aitutaki arutanga beach fun family">
+                        <li data-tags="europe western europe france ile de france paris monument culture">
                             <article class="catalog-item">
-                                <img src="./assets/catalog/aitutaki_cook_islands.jpg" alt="Picture of Aitutaki">
-                                <h2>Aitutaki, Cook Islands</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dui felis, lacinia
-                                    vel sem eget, ultrices pharetra purus. Duis lacus nunc, egestas sed hendrerit vel,
-                                    vehicula vel massa. Vivamus odio ante, dapibus a odio sit amet, egestas ornare
-                                    tortor.
-                                </p>
+                                <img src="./assets/catalog/eiffel_tower.jpg" alt="Picture of the Eiffel Tower">
+                                <h2>Eiffel Tower, France</h2>
+                                <p>An iconic 330-meter wrought-iron lattice tower built in Paris for the 1889 World's
+                                    Fair by engineer Gustave Eiffel.</p>
+                            </article>
+                        </li>
+                        <li data-tags="europe southern europe italy lazio rome monument historical">
+                            <article class="catalog-item">
+                                <img src="./assets/catalog/roman_colosseum.jpg" alt="Picture of the Roman Colosseum">
+                                <h2>Roman Colosseum, Italy</h2>
+                                <p>The world's largest ancient amphitheater, built in Rome between 70 and 80 AD during
+                                    the Flavian dynasty for gladiatorial games and public spectacles.</p>
+                            </article>
+                        </li>
+                        <li data-tags="oceania australia new south wales sydney monument culture">
+                            <article class="catalog-item">
+                                <img src="./assets/catalog/sydney_opera_house.png"
+                                    alt="Picture of the Sydney Opera House">
+                                <h2>Sydney Opera House, Australia</h2>
+                                <p>A world-renowned performing arts center in Sydney Harbour, designed by Danish
+                                    architect Jørn Utzon and opened in 1973.</p>
+                            </article>
+                        </li>
+                        <li data-tags="asia southeast asia malaysia selangor gombak monument culture">
+                            <article class="catalog-item">
+                                <img src="./assets/catalog/batu_caves.jpg" alt="Picture of Batu Caves">
+                                <h2>Batu Caves, Malaysia</h2>
+                                <p>A 400-million-year-old limestone hill in Selangor containing cave temples, guarded by
+                                    a 42.7-meter giant golden statue of Lord Murugan.</p>
+                            </article>
+                        </li>
+                        <li data-tags="north america usa california san francisco monument architecture">
+                            <article class="catalog-item">
+                                <img src="./assets/catalog/golden_gate_bridge.jpg"
+                                    alt="Picture of the Golden Gate Bridge">
+                                <h2>Golden Gate Bridge, USA</h2>
+                                <p>An iconic 2.7-kilometer suspension bridge spanning the opening of the San Francisco
+                                    Bay into the Pacific Ocean, opened in 1937.</p>
+                            </article>
+                        </li>
+                        <li data-tags="europe central europe germany berlin monument historical">
+                            <article class="catalog-item">
+                                <img src="./assets/catalog/brandenburg_gate.jpg" alt="Picture of Brandenburg Gate">
+                                <h2>Brandenburg Gate, Germany</h2>
+                                <p>An 18th-century neoclassical monument in Berlin commissioned by King Frederick
+                                    William II, standing as a national symbol of unity.</p>
+                            </article>
+                        </li>
+                        <li data-tags="oceania australia queensland whitsundays beach fun family">
+                            <article class="catalog-item">
+                                <img src="./assets/catalog/whitehaven_beach.jpg" alt="Picture of Whitehaven Beach">
+                                <h2>Whitehaven Beach, Australia</h2>
+                                <p>A 7-kilometer stretch along Whitsunday Island famed for its 98% pure white silica
+                                    sand and crystal-clear turquoise waters.</p>
                             </article>
                         </li>
                     </ul>

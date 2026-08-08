@@ -25,14 +25,14 @@
 
 /* Catalog and Search */
 
-.catalog-container {
+#catalog-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 30px 0 30px 0;
 }
 
-.catalog-form {
+#catalog-form {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,20 +52,61 @@
 
 /* Catalog Filter */
 
-.catalog-container .search-filter {
+#search-filter {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#dropdown-container {
+    position: relative;
     width: 24px;
     height: 24px;
 }
 
-/* TODO: Implement filter utility */
+#dropdown-menu {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: var(--modal-color);
+    top: 35px;
+    right: 0px;
+    width: 220px;
+    padding: 25px;
+}
+
+#dropdown-menu.visible {
+    display: flex;
+}
+
+h3 {
+    margin: 0;
+}
+
+h4 {
+    margin: 10px 0;
+}
+
+#search-filter-reset {
+    background-color: var(--heading-color);
+    border-radius: 8px;
+    padding: 2px 15px;
+    margin: 8px 0 12px 0;
+    cursor: pointer;
+}
+
+/* To prevent filter from overshooting the end of the webpage */
+#catalog-container {
+    min-height: 500px;
+}
 
 /* Catalog Layout */
 
-.catalog-item-container {
+#catalog-item-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 30px 0 30px 0;
+    margin: 40px 0 30px 0;
     column-gap: 15px;
     row-gap: 25px;
 }

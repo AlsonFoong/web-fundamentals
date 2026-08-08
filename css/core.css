@@ -30,6 +30,7 @@
     /* Default Colors */
     --text-color: var(--dark-black);
     --background-color: var(--sand);
+    --modal-color: var(--white-sand);
     --header-color: var(--sand);
     --heading-color: var(--blue-wave);
     --anchor-color: var(--blue-wave);
@@ -41,6 +42,7 @@
 .dark-mode {
     --text-color: var(--washed-white);
     --background-color: var(--dark-out);
+    --modal-color: var(--lights-out);
     --header-color: var(--dark-out);
     --heading-color: var(--blue-wave-light);
     --anchor-color: var(--blue-wave-light);
