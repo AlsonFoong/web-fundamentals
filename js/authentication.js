@@ -188,5 +188,18 @@ document.addEventListener('DOMContentLoaded', () => {
         authSection.hidden = true;
         welName.textContent = matchedUser.name;
         welPanel.hidden = false;
+
+        // Change header login text to logout immediately after login
+        const loginLink = document.getElementById('login');
+        const currentUser = JSON.parse(localStorage.getItem('vividlyCurrentUser'));
+        loginLink.textContent = `${currentUser.name} - Logout`;
+        loginLink.href = '#';
+
+        // Implement functionality for logout text
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('vividlyCurrentUser');
+            window.location.href = './index.html';
+        });
     });
 });
