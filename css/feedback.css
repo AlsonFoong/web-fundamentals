@@ -1,0 +1,220 @@
+/* Styling for the feedback form stars */
+.star-rating {
+    font-size: 32px;
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+/* Default state for the stars (gray) */
+.star {
+    color: lightgray;
+    transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+/* Active state for the stars (yellow) */
+.star.active {
+    color: #ffc107;
+}
+
+/* Form container styling */
+.feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--modal-color);
+    border-radius: 15px;
+    box-shadow: 0 2.5px 15px -3px;
+}
+
+/* Form field styling */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    font-family: var(--body-font);
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: var(--heading-color);
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field select,
+.form-field textarea {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 2px solid var(--blue-wave-light);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: border-color 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--blue-wave);
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit button matching auth theme */
+.submit-btn {
+    display: block;
+    width: 100%;
+    font-family: var(--heading-font);
+    font-weight: var(--heading-weight);
+    font-size: 1rem;
+    color: var(--sand);
+    background-color: var(--blue-wave);
+    border-radius: 10px;
+    padding: 9px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    border: none;
+}
+
+.submit-btn:hover {
+    background-color: var(--blue-wave-dark);
+}
+
+.dark-mode .submit-btn {
+    color: var(--dark-out);
+    background-color: var(--blue-wave-light);
+}
+
+.dark-mode .submit-btn:hover {
+    background-color: var(--washed-white);
+}
+
+/* Error and success messages */
+.error-msg {
+    color: #c0392b;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    min-height: 1.2em;
+}
+
+.success-msg {
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    min-height: 1.2em;
+}
+
+.dark-mode .error-msg {
+    color: #ff7b6b;
+}
+
+.dark-mode .success-msg {
+    color: #2ecc71;
+}
+
+/* --- NEW STYLES FOR DYNAMIC REVIEWS --- */
+#recent-reviews-section {
+    margin-top: 60px;
+    padding-top: 20px;
+}
+
+#recent-reviews-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+#reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.review-card {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid var(--blue-wave-light);
+    border-radius: 15px;
+    padding: 20px;
+    background-color: var(--modal-color);
+    box-shadow: 0 2.5px 15px -3px;
+    transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-3px);
+}
+
+.review-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.review-author {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+}
+
+.review-stars-display {
+    color: #ffc107;
+    font-size: 1.2em;
+}
+
+.review-date {
+    font-size: 0.85em;
+    color: #888;
+}
+
+.review-card p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Dark mode support for reviews */
+.dark-mode .review-card {
+    background-color: var(--modal-color);
+    border-color: #444;
+}
+
+.dark-mode #recent-reviews-section {
+    border-top-color: #444;
+}
+
+/* Desktop adjustments */
+@media (width > 768px) {
+    .feedback-form {
+        padding: 50px 60px;
+    }
+
+    .review-card {
+        padding: 25px 30px;
+    }
+
+    .star-rating {
+        font-size: 35px;
+    }
+}
