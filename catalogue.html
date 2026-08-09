@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="icon" href=""> -->
     <link rel="stylesheet" href="./css/core.css">
-    <link rel="stylesheet" href="./css/catalog.css">
+    <link rel="stylesheet" href="./css/catalogue.css">
     <script src="./js/themeToggle.js"></script>
     <script src="./js/menu.js" defer></script>
-    <script src="./js/catalog.js" defer></script>
+    <script src="./js/catalogue.js" defer></script>
     <script src="./js/session.js"></script>
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode')
         }
     </script>
-    <title>Vividly - Catalog</title>
+    <title>Vividly - Catalogue</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
                     <ul>
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./team.html">About Us</a></li>
-                        <li><a href="./catalog.html">Catalog</a></li>
+                        <li><a href="./catalogue.html">Catalogue</a></li>
                         <li><a href="./feedback.html">Feedback</a></li>
                     </ul>
                 </nav>
@@ -62,7 +62,7 @@
                 <ul>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./team.html">About Us</a></li>
-                    <li><a href="./catalog.html">Catalog</a></li>
+                    <li><a href="./catalogue.html">Catalogue</a></li>
                     <li><a href="./feedback.html">Feedback</a></li>
                 </ul>
             </nav>
@@ -79,7 +79,7 @@
             <section>
                 <h1>Have a look at our favorite travel hotspots!</h1>
                 <p>
-                    Welcome to our handpicked travel catalog! Journey through remarkable landscapes, world-renowned
+                    Welcome to our handpicked travel catalogue! Journey through remarkable landscapes, world-renowned
                     historical monuments, and hidden coastal paradises carefully selected to inspire your next journey.
                     Use the search bar and filter controls below to seamlessly browse destinations by continent,
                     cultural significance, or type. Whether you are planning a memorable family vacation, an immersive
@@ -88,15 +88,15 @@
                     getaway. Contact us for further details on how to secure your travel package!
                 </p>
 
-                <div id="catalog-container">
-                    <search id="catalog-search-container">
-                        <form id="catalog-form" role="search">
-                            <label for="catalog-search" class="visually-hidden">Search travel catalog</label>
-                            <input id="catalog-search" class="search-bar" type="search" placeholder="Search"
+                <div id="catalogue-container">
+                    <search id="catalogue-search-container">
+                        <form id="catalogue-form" role="search">
+                            <label for="catalogue-search" class="visually-hidden">Search travel catalogue</label>
+                            <input id="catalogue-search" class="search-bar" type="search" placeholder="Search"
                                 autocomplete="off">
 
                             <div id="dropdown-container">
-                                <button id="search-filter" type="button" aria-label="Filter catalog items">
+                                <button id="search-filter" type="button" aria-label="Filter catalogue items">
                                     <img src="./assets/filter.svg" alt="" aria-hidden="true">
                                 </button>
 
@@ -136,127 +136,127 @@
                         </form>
                     </search>
 
-                    <ul id="catalog-item-container">
+                    <ul id="catalogue-item-container">
                         <li data-tags="oceania pacific cook islands aitutaki arutanga beach fun family" data-nights="7" data-price="3500">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/aitutaki_cook_islands.jpg" alt="Picture of Aitutaki">
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/aitutaki_cook_islands.jpg" alt="Picture of Aitutaki">
                                 <h2>Aitutaki, Cook Islands</h2>
                                 <p>A serene South Pacific atoll famed for its central main island surrounded by a vast
                                     turquoise lagoon and pristine uninhabited islets.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>7 Nights - $3500</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="asia south asia india uttar pradesh agra monument historical" data-nights="5" data-price="1600">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/taj_mahal.webp" alt="Picture of the Taj Mahal">
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/taj_mahal.webp" alt="Picture of the Taj Mahal">
                                 <h2>Taj Mahal, India</h2>
                                 <p>An ivory-white marble mausoleum in Agra built between 1631 and 1653 by Mughal Emperor
                                     Shah Jahan in memory of his favorite wife, Mumtaz Mahal.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>5 Nights - $1600</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="asia southeast asia malaysia kuala lumpur monument architecture" data-nights="3" data-price="800">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/petronas_twin_towers.jpg"
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/petronas_twin_towers.jpg"
                                     alt="Picture of the Petronas Twin Towers">
                                 <h2>Petronas Twin Towers, Malaysia</h2>
                                 <p>Majestic 88-story twin skyscrapers in Kuala Lumpur that held the title of the world's
                                     tallest building from 1998 to 2004.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>3 Nights - $800</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="africa southern africa south africa western cape cape town beach fun family" data-nights="4" data-price="2900">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/boulders_beach.jpg" alt="Picture of Boulders Beach">
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/boulders_beach.jpg" alt="Picture of Boulders Beach">
                                 <h2>Boulders Beach, South Africa</h2>
                                 <p>A sheltered beach near Cape Town surrounded by massive granite boulders and home to a
                                     thriving wild colony of African penguins.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>4 Nights - $2900</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="europe western europe france ile de france paris monument culture" data-nights="5" data-price="2200">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/eiffel_tower.jpg" alt="Picture of the Eiffel Tower">
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/eiffel_tower.jpg" alt="Picture of the Eiffel Tower">
                                 <h2>Eiffel Tower, France</h2>
                                 <p>An iconic 330-meter wrought-iron lattice tower built in Paris for the 1889 World's
                                     Fair by engineer Gustave Eiffel.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>5 Nights - $2200</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="europe southern europe italy lazio rome monument historical" data-nights="5" data-price="1900">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/roman_colosseum.jpg" alt="Picture of the Roman Colosseum">
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/roman_colosseum.jpg" alt="Picture of the Roman Colosseum">
                                 <h2>Roman Colosseum, Italy</h2>
                                 <p>The world's largest ancient amphitheater, built in Rome between 70 and 80 AD during
                                     the Flavian dynasty for gladiatorial games and public spectacles.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>5 Nights - $1900</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="oceania australia new south wales sydney monument culture" data-nights="6" data-price="2500">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/sydney_opera_house.png"
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/sydney_opera_house.png"
                                     alt="Picture of the Sydney Opera House">
                                 <h2>Sydney Opera House, Australia</h2>
                                 <p>A world-renowned performing arts center in Sydney Harbour, designed by Danish
                                     architect Jørn Utzon and opened in 1973.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>6 Nights - $2500</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="asia southeast asia malaysia selangor gombak monument culture" data-nights="3" data-price="550">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/batu_caves.jpg" alt="Picture of Batu Caves">
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/batu_caves.jpg" alt="Picture of Batu Caves">
                                 <h2>Batu Caves, Malaysia</h2>
                                 <p>A 400-million-year-old limestone hill in Selangor containing cave temples, guarded by
                                     a 42.7-meter giant golden statue of Lord Murugan.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>3 Nights - $550</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="north america usa california san francisco monument architecture" data-nights="6" data-price="2700">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/golden_gate_bridge.jpg"
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/golden_gate_bridge.jpg"
                                     alt="Picture of the Golden Gate Bridge">
                                 <h2>Golden Gate Bridge, USA</h2>
                                 <p>An iconic 2.7-kilometer suspension bridge spanning the opening of the San Francisco
                                     Bay into the Pacific Ocean, opened in 1937.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>6 Nights - $2700</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="europe central europe germany berlin monument historical" data-nights="5" data-price="2000">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/brandenburg_gate.jpg" alt="Picture of Brandenburg Gate">
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/brandenburg_gate.jpg" alt="Picture of Brandenburg Gate">
                                 <h2>Brandenburg Gate, Germany</h2>
                                 <p>An 18th-century neoclassical monument in Berlin commissioned by King Frederick
                                     William II, standing as a national symbol of unity.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>5 Nights - $2000</h3>
                                 </div>
                             </article>
                         </li>
                         <li data-tags="oceania australia queensland whitsundays beach fun family" data-nights="7" data-price="3900">
-                            <article class="catalog-item">
-                                <img src="./assets/catalog/whitehaven_beach.jpg" alt="Picture of Whitehaven Beach">
+                            <article class="catalogue-item">
+                                <img src="./assets/catalogue/whitehaven_beach.jpg" alt="Picture of Whitehaven Beach">
                                 <h2>Whitehaven Beach, Australia</h2>
                                 <p>A 7-kilometer stretch along Whitsunday Island famed for its 98% pure white silica
                                     sand and crystal-clear turquoise waters.</p>
-                                <div class="catalog-item-purchase-bar">
+                                <div class="catalogue-item-purchase-bar">
                                     <h3>7 Nights - $3900</h3>
                                 </div>
                             </article>

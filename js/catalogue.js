@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchForm = document.getElementById('catalog-form')
-    const searchContainer = document.getElementById('catalog-search-container')
-    const searchBar = document.getElementById('catalog-search')
+    const searchForm = document.getElementById('catalogue-form')
+    const searchContainer = document.getElementById('catalogue-search-container')
+    const searchBar = document.getElementById('catalogue-search')
     const searchFilter = document.getElementById('search-filter')
     const searchFilterResetButton = document.getElementById('search-filter-reset')
     const searchFilterDropdown = document.getElementById('dropdown-menu')
-    const catalogItemContainer = document.getElementById('catalog-item-container')
-    const catalogItems = document.querySelectorAll('#catalog-item-container > li')
-    const originalItemOrder = Array.from(catalogItems)
+    const catalogueItemContainer = document.getElementById('catalogue-item-container')
+    const catalogueItems = document.querySelectorAll('#catalogue-item-container > li')
+    const originalItemOrder = Array.from(catalogueItems)
 
     let shown = false
     let query = ''
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function applyFilters() {
-        catalogItems.forEach(item => {
+        catalogueItems.forEach(item => {
             const itemText = item.textContent.toLowerCase()
             const itemTags = item.dataset.tags ? item.dataset.tags.toLowerCase() : ''
 
@@ -49,11 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function sortItems() {
-        // catalogItems is not dynamic, so directly access children
-        const itemsArray = Array.from(catalogItemContainer.children)
+        // catalogueItems is not dynamic, so directly access children
+        const itemsArray = Array.from(catalogueItemContainer.children)
 
         if (!currentSort) {
-            originalItemOrder.forEach(item => catalogItemContainer.appendChild(item))
+            originalItemOrder.forEach(item => catalogueItemContainer.appendChild(item))
             return
         }
 
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
 
-        itemsArray.forEach(item => catalogItemContainer.appendChild(item))
+        itemsArray.forEach(item => catalogueItemContainer.appendChild(item))
     }
 
     searchContainer.addEventListener('input', (e) => {
