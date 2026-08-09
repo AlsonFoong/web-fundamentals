@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- <html lang="en" class="dark-mode"> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href=""> -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="../../js/themeToggle.js"></script>
+    <script src="../../js/menu.js" defer></script>
+    <script src="../../js/session.js"></script>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode')
+        }
+    </script>
+    <title>Vividly</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=block" rel="stylesheet">
+</head>
+
+<body>
+    <div id="site-container">
+        <button id="theme-toggle" aria-label="Toggle dark mode"></button>
+        <header>
+            <div>
+                <div id="header-logo">
+                    <a href="../../index.html">Vividly</a>
+                </div>
+            </div>
+            <div id="header-menu">
+                <nav aria-label="Primary Navigation">
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../team.html">About Us</a></li>
+                        <li><a href="../../catalog.html">Catalog</a></li>
+                        <li><a href="../../feedback.html">Feedback</a></li>
+                    </ul>
+                </nav>
+                <div id="header-utilities">
+                    <a id="login" href="../../authentication.html">Login</a>
+                    <button id="menu-button" aria-label="Open navigation menu" aria-haspopup="true"
+                        aria-expanded="false">
+                        <img src="../../assets/menu.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <aside id="vertical-menu" aria-label="Mobile Navigation Drawer">
+            <div id="vertical-menu-utilities">
+                <button id="cancel-button" aria-label="Close navigation menu">
+                    <img src="../../assets/cancel.svg" alt="">
+                </button>
+            </div>
+            <nav aria-label="Mobile Navigation">
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../team.html">About Us</a></li>
+                    <li><a href="../../catalog.html">Catalog</a></li>
+                    <li><a href="../../feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section id="theme-notification">
+                <p>Did you know? You can click on the <span id="theme-notification-planet">sun</span> to change themes!
+                </p>
+                <button id="theme-notification-cancel" aria-label="Close theme notification">
+                    <img src="../../assets/cancel.svg" alt="">
+                </button>
+            </section>
+
+            <section id="bio">
+                <div>
+                    <h1>Hello!</h1>
+                    <p>
+                        My name is Foong Zi Hao Alson, and I am a first-year Computer Science student at Sunway
+                        University. I was previously a self-taught developer, but I wish to push my boundaries and seek
+                        formal recognition for my skills. I am highly motivated to succeed and possess the willpower to
+                        shape my future. Currently, I am experienced with TypeScript/JavaScript, HTML/CSS, Python, and
+                        Java.
+                    </p>
+                </div>
+                <img src="./assets/photo.jpg" id="photo" alt="Picture of Alson">
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <div id="buckets">
+                    <div>
+                        <div class="bucket red">
+                            <div class="bucket-water">
+                                <span class="bucket-label">University</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Entering a new era (2026 - Present)</h3>
+                            <p>Being motivated by my desire to better understand the domain of computer science, and how
+                                it can be applied in different environments, I joined Sunway University to pursue my
+                                dream of becoming a software engineer. I sought to receive instruction from a
+                                prestigious institution and network with like-minded people through events and meetups,
+                                and as such, I have been actively reaching out to individuals and participating in
+                                events alike.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bucket blue">
+                            <!-- <div class="bucket-water"> -->
+                            <span class="bucket-label">Pre-University</span>
+                            <!-- </div> -->
+                        </div>
+                        <div>
+                            <h3>Among top scorers in the UEC (2024 - 2025)</h3>
+                            <p>For me, the UEC examination represented the culmination of 3 years of effort, all
+                                condensed into one single examination at the end of Form 6. Having set my sights on a
+                                potential scholarship offer, I worked on problem set after problem set of Advanced
+                                Mathematics papers and pushed to attain better scores in Economics. This effort paid
+                                off, and I scored 7 points from 5 subjects out of a theoretical best of 5 points.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bucket green">
+                            <div class="bucket-water">
+                                <span class="bucket-label">Secondary School</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Getting through turbulent times (2020 - 2024)</h3>
+                            <p>In early years, this period was rocked by the sudden onset of the COVID-19 pandemic, but
+                                my mission to remain a top student did not sway. In the years leading up to the SPM
+                                examination, I put effort into understanding subject material and applying this
+                                knowledge wherever possible, shaping a solid foundation that helped to propel my
+                                progress. With this, I managed to achieve 5 A's and add myself to my school's board of
+                                high achievers.</p>
+                        </div>
+                    </div>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <div id="rocks">
+                    <div class="rock blue-grey shape-1">
+                        <div class="rock-content">
+                            <h3>TypeScript/JavaScript</h3>
+                            <div class="skill-bar" style="--level: 85%;">
+                                <div class="skill-fill">
+                                    <span class="skill-label">85%</span>
+                                </div>
+                            </div>
+                            <p>Applications</p>
+                        </div>
+                    </div>
+
+                    <div class="rock tan shape-2">
+                        <div class="rock-content">
+                            <h3>HTML/CSS</h3>
+                            <div class="skill-bar" style="--level: 80%;">
+                                <div class="skill-fill">
+                                    <span class="skill-label">80%</span>
+                                </div>
+                            </div>
+                            <p>Website Creation</p>
+                        </div>
+                    </div>
+
+                    <div class="rock light-grey shape-3">
+                        <div class="rock-content">
+                            <h3>Python/Java</h3>
+                            <div class="skill-bar" style="--level: 65%;">
+                                <div class="skill-fill">
+                                    <span class="skill-label">65%</span>
+                                </div>
+                            </div>
+                            <p>Backend Design</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div id="mats">
+                    <div class="beach-mat ocean">
+                        <div class="mat">
+                            <span class="project-tag">Node.js</span>
+                            <h3>Discord Application</h3>
+                            <p>A 24/7 bot running on Google Cloud Platform (GCP) that utilises web APIs for dynamic
+                                content fetching.</p>
+                        </div>
+                    </div>
+
+                    <div class="beach-mat sunset">
+                        <div class="mat">
+                            <span class="project-tag">Chrome Extensions API</span>
+                            <h3>Chrome Extension</h3>
+                            <p>An extension that manipulates DOM elements, intercepts network requests, and uses
+                                extension storage to augment website functionality.</p>
+                        </div>
+                    </div>
+
+                    <div class="beach-mat bamboo">
+                        <div class="mat">
+                            <span class="project-tag">Website</span>
+                            <h3>Portfolio Site</h3>
+                            <p>A beach-themed portfolio showcasing personal skills with top-down visual elements.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cv">
+                <div>
+                    <div id="shell" aria-hidden="true"></div>
+                    <a href="assets/CV.pdf" id="pearl" download title="Download CV" target="_blank">
+                        <span class="pearl-label">Download<br>CV</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div id="footer-image" aria-hidden="true"></div>
+        </footer>
+    </div>
+</body>
+
+</html>

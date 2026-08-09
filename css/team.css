@@ -38,6 +38,10 @@
     border: 3px solid #FFD166; 
 }
 
+#alson {
+    object-position: center 0%;
+}
+
 .team-card h3 {
     margin: 10px 0 5px 0;
 }

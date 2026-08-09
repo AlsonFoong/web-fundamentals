@@ -1,0 +1,552 @@
+:root {
+    box-sizing: border-box;
+
+    --bucket-size: 150px;
+    --bucket-lug-size: 18px;
+    --bucket-lug-protrusion: -12px;
+    --bucket-rim-size: 20px;
+    --rock-width: 250px;
+    --rock-height: 150px;
+    --minimum-mat-size: 250px;
+    --maximum-mat-size: 400px;
+
+    /* Bucket Palette */
+    --red-bucket-color: #ff5d5d;
+    --red-bucket-color-bottom: #854242;
+    --green-bucket-color: #4ade80;
+    --green-bucket-color-bottom: #2c7249;
+    --blue-bucket-color: #5d98ff;
+    --blue-bucket-color-bottom: #3c5f9a;
+    --bucket-water-color-inside: #38bdf8;
+    --bucket-water-color-outside: #0284c7;
+
+    /* Rock Palette */
+    --blue-grey-light: #dfdfdf;
+    --blue-grey: #819fac;
+    --tan-light: #f4efed;
+    --tan: #e9d8d0;
+    --light-grey-light: #eaeaea;
+    --light-grey: #bbc0bc;
+
+    /* Mat Palette */
+    --tassel: repeating-linear-gradient(90deg,
+            #ffffff 0px 4px,
+            transparent 4px 8px);
+    --ocean: repeating-linear-gradient(90deg,
+            #0284c7 0px 30px,
+            #f0f9ff 30px 60px);
+    --sunset: repeating-linear-gradient(90deg,
+            #f43f5e 0px 30px,
+            #fef2f2 30px 60px,
+            #fbbf24 60px 90px,
+            #fef2f2 90px 120px);
+    --bamboo:
+        repeating-linear-gradient(0deg,
+            transparent 0px 6px,
+            rgba(120, 53, 15, 0.25) 6px 12px),
+        repeating-linear-gradient(90deg,
+            #fef3c7 0px 6px,
+            #fde68a 6px 12px);
+
+
+    /* Shell */
+    --shell-image-url: url('./assets/shell.png');
+}
+
+.dark-mode {
+    --shell-image-url: url('./assets/shell-dark.png');
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#theme-notification {
+    align-self: center;
+}
+
+#bio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+    gap: 50px;
+}
+
+#photo {
+    height: 300px;
+    width: auto;
+    border-radius: 95% 50% 80% 55% / 55% 90% 50% 85%;
+    justify-self: center;
+}
+
+/* Buckets */
+
+#buckets {
+    margin: 50px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    gap: 30px;
+}
+
+.bucket {
+    /* Default to red */
+    --bucket-color: var(--red-bucket-color);
+    --bucket-color-bottom: var(--red-bucket-color-bottom);
+
+    position: relative;
+    width: var(--bucket-size);
+    height: var(--bucket-size);
+    border-radius: 50%;
+    background: var(--bucket-color-bottom);
+    padding: var(--bucket-rim-size);
+    box-shadow:
+        /* Shadow */
+        0 12px 24px rgba(0, 0, 0, 0.15),
+        /* Highlight */
+        inset 0 3px 5px rgba(255, 255, 255, 0.6),
+        /* Inner Shadow */
+        inset 0 -3px 5px rgba(0, 0, 0, 0.3),
+        inset 0 0 0px var(--bucket-rim-size) var(--bucket-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--heading-font);
+    font-weight: var(--heading-weight);
+    font-size: 1.5rem;
+    text-align: center;
+    justify-self: center;
+}
+
+/* Lugs */
+.bucket::after {
+    position: absolute;
+    content: '';
+    height: var(--bucket-lug-size);
+    left: var(--bucket-lug-protrusion);
+    right: var(--bucket-lug-protrusion);
+    background-color: var(--bucket-color);
+    border-radius: 10px;
+    /* Oddly enough, translateX makes this unnecessary, but it must be reapplied otherwise */
+    /* top: 50%; */
+    transform: translateY(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: -1;
+}
+
+/* Handle */
+.bucket::before {
+    position: absolute;
+    content: '';
+    height: 60%;
+    top: -24px;
+    left: var(--bucket-lug-protrusion);
+    right: var(--bucket-lug-protrusion);
+    border: 7px solid var(--bucket-color);
+    border-radius: 100px 100px 0 0;
+    border-bottom: none;
+    z-index: -1;
+}
+
+.bucket-water {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--bucket-water-color-inside) 0%, var(--bucket-water-color-outside) 100%);
+    box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bucket-label {
+    color: var(--white-sand);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Bucket Effects */
+
+.bucket:hover {
+    transform: translateY(-5px) rotate(-2deg);
+    transform-style: preserve-3d;
+    box-shadow:
+        /* Shadow */
+        0 12px 24px rgba(0, 0, 0, 0.25),
+        /* Highlight */
+        inset 0 3px 5px rgba(255, 255, 255, 0.6),
+        /* Inner Shadow */
+        inset 0 -3px 5px rgba(0, 0, 0, 0.3),
+        inset 0 0 0px var(--bucket-rim-size) var(--bucket-color);
+    /* Apparently applying this to .bucket itself causes z-index issues */
+    transition: all 0.2s ease;
+}
+
+.bucket::before,
+.bucket::after {
+    /* Oddly enough, translateX makes top: 50% unnecessary, but it must be reapplied otherwise */
+    transform: translateZ(-1px);
+}
+
+/* Bucket Variants */
+
+.bucket.red {
+    --bucket-color: var(--red-bucket-color);
+    --bucket-color-bottom: var(--red-bucket-color-bottom);
+}
+
+.bucket.green {
+    --bucket-color: var(--green-bucket-color);
+    --bucket-color-bottom: var(--green-bucket-color-bottom);
+}
+
+.bucket.blue {
+    --bucket-color: var(--blue-bucket-color);
+    --bucket-color-bottom: var(--blue-bucket-color-bottom);
+}
+
+/* Rocks */
+
+#rocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 25px;
+
+}
+
+.rock {
+    /* Default to blue grey */
+    --rock-background: radial-gradient(circle at 35% 30%, var(--light) 0%, var(--blue-grey) 100%);
+
+    width: var(--rock-width);
+    height: var(--rock-height);
+    background: var(--rock-background);
+    box-shadow:
+        0 10px 20px rgba(12, 74, 110, 0.15),
+        inset 2px 4px 6px rgba(255, 255, 255, 0.6),
+        inset -4px -8px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.rock-content h3 {
+    color: var(--blue-wave);
+    margin: 0 0 10px 0;
+}
+
+.rock-content p {
+    color: var(--dark-black);
+    margin: 10px 0 0 0;
+}
+
+/* Rock Effects */
+
+.rock:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:
+        0 10px 20px rgba(12, 74, 110, 0.25),
+        inset 2px 4px 6px rgba(255, 255, 255, 0.6),
+        inset -4px -8px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Rock Variants */
+
+.rock.blue-grey {
+    --rock-background: radial-gradient(circle at 35% 30%, var(--blue-grey-light) 0%, var(--blue-grey) 100%);
+}
+
+.rock.tan {
+    --rock-background: radial-gradient(circle at 35% 30%, var(--tan-light) 0%, var(--tan) 100%);
+}
+
+.rock.light-grey {
+    --rock-background: radial-gradient(circle at 35% 30%, var(--light-grey-light) 0%, var(--light-grey) 100%);
+}
+
+.rock.shape-1 {
+    border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%;
+}
+
+.rock.shape-2 {
+    border-radius: 35% 60% 55% 40% / 50% 60% 50% 55%
+}
+
+.rock.shape-3 {
+    border-radius: 65% 35% 50% 50% / 50% 60% 40% 50%;
+}
+
+/* Skill Bar */
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 100px;
+}
+
+.skill-fill {
+    position: relative;
+    height: 100%;
+    width: var(--level, 50%);
+    background: linear-gradient(90deg, var(--blue-wave-light), var(--blue-wave));
+    border-radius: 20px;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.4) inset;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.skill-label {
+    position: absolute;
+    transform: translateY(-22%);
+    margin-right: 6px;
+    font-size: 0.75rem;
+    color: var(--dark-black);
+}
+
+/* Mats */
+
+#mats {
+    margin-top: 25px;
+    display: grid;
+    justify-items: center;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(var(--minimum-mat-size), 1fr));
+}
+
+.beach-mat {
+    max-width: var(--maximum-mat-size);
+    /* Default to ocean mat */
+    background: var(--ocean);
+    position: relative;
+    box-shadow:
+        0 14px 28px rgba(12, 74, 110, 0.15),
+        0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.beach-mat::before,
+.beach-mat::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    height: 12px;
+    /* Create tassels */
+    background: var(--tassel);
+}
+
+.beach-mat::before {
+    top: -12px;
+}
+
+.beach-mat::after {
+    bottom: -12px;
+}
+
+/* Mat Cover */
+
+.mat {
+    margin: 50px 20px;
+    padding: 20px;
+    background-color: var(--modal-color);
+}
+
+.project-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--blue-wave);
+    background: var(--sand);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.mat h3 {
+    margin: 0;
+}
+
+/* Mat Effects */
+
+.beach-mat:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 14px 28px rgba(12, 74, 110, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Mat Variants */
+
+.beach-mat.ocean {
+    background: var(--ocean);
+}
+
+.beach-mat.sunset {
+    background: var(--sunset);
+}
+
+.beach-mat.bamboo {
+    background-image: var(--bamboo);
+}
+
+/* Shell */
+
+#cv>div {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+#shell {
+    height: 240px;
+    width: 240px;
+    margin: 35px 0;
+    background-image: var(--shell-image-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#pearl {
+    position: absolute;
+    top: 65px;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: var(--blue-wave);
+    background: radial-gradient(circle at 35% 28%,
+            #ffffff 0%,
+            #fff1f2 20%);
+    box-shadow:
+        inset -4px -7px 14px rgba(71, 85, 105, 0.55),
+        inset 4px 4px 10px rgba(255, 255, 255, 1),
+        0 0 24px rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#pearl:hover {
+    transform: scale(1.07);
+    box-shadow:
+        inset -4px -7px 14px rgba(71, 85, 105, 0.45),
+        inset 4px 4px 12px rgba(255, 255, 255, 1),
+        0 0 32px rgba(255, 255, 255, 1);
+}
+
+#pearl:active {
+    transform: scale(0.97);
+}
+
+/* Desktop */
+@media (width > 768px) {
+    #buckets {
+        grid-template-columns: max-content 1fr;
+        justify-items: left;
+        gap: 80px;
+    }
+
+    #buckets>div {
+        display: contents;
+    }
+}
+
+@media print {
+
+    #theme-toggle,
+    header {
+        display: none !important;
+    }
+
+    :root {
+        --text-color: black;
+        --background-color: white;
+        --modal-color: white;
+        --header-color: white;
+        --heading-color: black;
+        --anchor-color: black;
+        --anchor-hover-color: black;
+        --button-color: grey;
+    }
+
+    #site-container {
+        display: initial;
+    }
+
+    section h2 {
+        break-after: avoid;
+    }
+
+    .bucket,
+    .bucket::before,
+    .bucket::after {
+        --bucket-color: black !important;
+        --bucket-color-bottom: white !important;
+        box-shadow: none;
+        border: 1px solid black;
+        break-inside: avoid;
+    }
+
+    .bucket::after {
+        background-color: white;
+    }
+
+    .bucket-water,
+    .rock,
+    .beach-mat {
+        background: none !important;
+        box-shadow: none;
+        border: 1px solid black;
+        break-inside: avoid;
+    }
+
+    .bucket-water,
+    .bucket::before,
+    .bucket::after {
+        border: none;
+    }
+
+    .bucket-label,
+    .rock-content h3,
+    .rock-content p,
+    #pearl {
+        color: black;
+        text-shadow: none;
+    }
+
+    .skill-fill {
+        background: black;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .project-tag {
+        color: black;
+        background-color: transparent;
+        border: 1px solid black;
+    }
+
+    .beach-mat::before,
+    .beach-mat::after,
+    #shell,
+    footer {
+        display: none;
+    }
+
+    #pearl {
+        background: white;
+        box-shadow: none;
+    }
+}
