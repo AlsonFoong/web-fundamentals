@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="icon" href=""> -->
     <link rel="stylesheet" href="./css/core.css">
+    <link rel="stylesheet" href="./css/feedback.css">
     <script src="./js/themeToggle.js"></script>
     <script src="./js/menu.js" defer></script>
     <script src="./js/session.js"></script>
+    <script src="./js/feedback.js" defer></script>
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode')
@@ -74,20 +76,65 @@
                     <img src="./assets/cancel.svg" alt="">
                 </button>
             </section>
-            <section>
-                <h1>We'd love to hear from you!</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dui felis, lacinia vel sem eget,
-                    ultrices pharetra purus. Duis lacus nunc, egestas sed hendrerit vel, vehicula vel massa. Vivamus
-                    odio ante, dapibus a odio sit amet, egestas ornare tortor. In ac mauris purus. Aliquam nisi odio,
-                    auctor non risus vel, feugiat congue eros. Praesent odio libero, elementum non elit ac, congue
-                    bibendum purus. Quisque porta et ex mollis efficitur. Sed volutpat finibus nulla, nec faucibus mi
-                    blandit non.
 
-                    Duis in magna at lacus suscipit consequat. Aenean vestibulum tincidunt eros sed fermentum. Sed sed
-                    ultricies leo. Nunc nec augue nec mi tempus iaculis. Nunc risus turpis, dapibus nec fringilla a,
-                    fermentum ac magna. Quisque et est nisi. Sed id pellentesque odio.
-                </p>
+            <section class="feedback-intro-section">
+                <h1>We'd love to hear from you!</h1>
+                <p>Your feedback helps us improve the Vividly platform and provide better travel recommendations. Please
+                    fill out the form below to share your thoughts, report issues, or suggest new features.</p>
+            </section>
+
+            <section>
+                <form id="feedback-form" class="feedback-form" action="#" method="POST">
+                    <div class="form-field">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="category">Feedback Category</label>
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="catalog">Travel Catalog</option>
+                            <option value="website">Website Usability</option>
+                            <option value="bug">Report a Bug</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Rate your experience:</label>
+                        <div class="star-rating">
+                            <button type="button" class="star" data-value="1">&#9733;</button>
+                            <button type="button" class="star" data-value="2">&#9733;</button>
+                            <button type="button" class="star" data-value="3">&#9733;</button>
+                            <button type="button" class="star" data-value="4">&#9733;</button>
+                            <button type="button" class="star" data-value="5">&#9733;</button>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="feedback-text">Your Message</label>
+                        <textarea id="feedback-text" name="message" rows="6"
+                            placeholder="Tell us what's on your mind..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+
+                    <div id="feedback-error" class="error-msg" aria-live="polite"></div>
+                    <div id="feedback-success" class="success-msg" aria-live="polite"></div>
+                </form>
+            </section>
+
+            <section id="recent-reviews-section">
+                <h2>Recent Feedback</h2>
+                <div id="reviews-container" aria-live="polite">
+                    <!-- JavaScript will inject reviews here -->
+                </div>
             </section>
         </main>
 
