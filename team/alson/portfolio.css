@@ -548,5 +548,11 @@ main {
     #pearl {
         background: white;
         box-shadow: none;
+        position: initial;
     }
+}
+
+@page {
+    margin-top: 8mm;
+    margin-bottom: 8mm;
 }
