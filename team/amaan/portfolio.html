@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdulla Amaan | Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css" />
+  <script src="portfolio.js" defer></script>
+</head>
+<body>
+  
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="logo"><a href="#">AA.</a></div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="highlight" id="typewriter">Abdulla Amaan</span></h1>
+      <p class="tagline">Computer Science Student & Aspiring Developer</p>
+      <p class="description">Building clean, modern, and high-performance web applications with a focus on user experience.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary-btn">View My Work</a>
+        <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">// About Me</h2>
+    <div class="about-container">
+      <p>I'm a student at Sunway University, currently pursuing a Bachelor's Degree in Computer Science. This portfolio showcases my journey as I explore, build, and grow in the world of technology.</p>
+      <p>Thank you for taking the time to check it out.</p>
+      <a href="resources/Amaan CV.pdf" download class="cv-download-btn">Download CV</a>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2 class="section-title">// Education</h2>
+    <div class="education-list">
+      <div class="education-card">
+        <div class="edu-header">
+          <div>
+            <h3>Sunway University</h3>
+            <p class="edu-degree">Bachelor of Computer Science</p>
+          </div>
+          <span class="edu-year">2026 - Current</span>
+        </div>
+        <p class="edu-detail">Currently pursuing my degree with a focus on software development and UI/UX design. Learning through coursework, personal projects, and experimentation.</p>
+        <div class="edu-tags">
+          <span>Student</span>
+          <span>Malaysia</span>
+          <span>Computer Science</span>
+        </div>
+      </div>
+
+      <div class="education-card">
+        <div class="edu-header">
+          <div>
+            <h3>Asia Pacific University (APU)</h3>
+            <p class="edu-degree">Foundation in Computer Science</p>
+          </div>
+          <span class="edu-year">Graduated 2023</span>
+        </div>
+        <p class="edu-detail">Completed the Foundation in Computer Science programme, building strong fundamentals in programming, mathematics, and technology concepts.</p>
+        <div class="edu-tags">
+          <span>Foundation</span>
+          <span>Malaysia</span>
+          <span>Computer Science</span>
+        </div>
+      </div>
+
+      <div class="education-card">
+        <div class="edu-header">
+          <div>
+            <h3>O-Levels</h3>
+            <p class="edu-degree">Secondary Education</p>
+          </div>
+          <span class="edu-year">Graduated 2017</span>
+        </div>
+        <p class="edu-detail">Completed O-Levels with a focus on science and mathematics, laying the groundwork for my journey into technology and programming.</p>
+        <div class="edu-tags">
+          <span>O-Levels</span>
+          <span>Secondary</span>
+          <span>Science & Maths</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2 class="section-title">// Skills</h2>
+    <div class="skills-container">
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Python</span>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="90%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">HTML / CSS</span>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Java</span>
+          <span class="skill-percent">75%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">JavaScript</span>
+          <span class="skill-percent">70%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="70%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">UI/UX Design</span>
+          <span class="skill-percent">60%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="60%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2 class="section-title">// Projects</h2>
+    <div class="projects-grid">
+      <article class="project-card">
+        <h3>Ride-Hailing Management System</h3>
+        <p>A Java-based system modeled after Grab, managing passengers and vehicles with trip booking, tracking, and ride history.</p>
+        <div class="tech-tags">
+          <span>Java</span><span>OOP</span><span>File I/O</span>
+        </div>
+        <div class="project-links">
+          <a href="#" target="_blank">Demo</a>
+          <a href="#" target="_blank">Code</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A fast, responsive, and accessible personal portfolio template built with vanilla CSS/JS.</p>
+        <div class="tech-tags">
+          <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="#" target="_blank">Demo</a>
+          <a href="#" target="_blank">Code</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2 class="section-title">// Get In Touch</h2>
+    <form id="contact-form" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="your.email@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required placeholder="Your message..."></textarea>
+      </div>
+        <button type="submit" class="btn primary-btn">Send Message</button>
+      <p id="form-status" class="form-status"></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Abdulla Amaan. All rights reserved.</p>
+  </footer>
+</body>
+</html>
