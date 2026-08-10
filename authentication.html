@@ -11,7 +11,7 @@
     <script src="./js/themeToggle.js"></script>
     <script src="./js/menu.js" defer></script>
     <script src="./js/authentication.js" defer></script>
-    <script src="./js/session.js"></script>
+    <script src="./js/session.js"></script> <!-- updates the header's login link once logged in -->
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode')
@@ -19,6 +19,7 @@
     </script>
     <title>Vividly - Login</title>
 
+    <!-- Preconnect warms up the connection to google fonts' servers so the actual font request loads faster-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=block" rel="stylesheet">
@@ -52,6 +53,7 @@
             </div>
         </header>
 
+        <!-- navigation menu for mobile-->
         <div id="vertical-menu">
             <div id="vertical-menu-utilities">
                 <button id="cancel-button" aria-label="Close navigation menu">
@@ -69,6 +71,7 @@
         </div>
 
         <main>
+            <!-- notifcation about how to toggle the theme-->
             <section id="theme-notification">
                 <p>Did you know? You can click on the <span id="theme-notification-planet">sun</span> to change themes!
                 </p>
@@ -80,7 +83,7 @@
 
                 <div id="login-box">
                     <h1>Login</h1>
-
+                    <!--- novalidate disables the browser's built-in validation popups -->
                     <form id="login-form" novalidate>
                         <div class="form-field">
                             <label for="login-email">Email</label>
@@ -101,7 +104,7 @@
 
                     <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
                 </div>
-
+                <!-- Signup panel-->
                 <div id="signup-box" hidden>
                     <p><a href="#" id="show-login">&larr; Back to login</a></p>
                     <h1>Create your account</h1>
@@ -114,6 +117,7 @@
 
                     <form id="signup-form" novalidate>
 
+                        <!-- name + email in signup -->
                         <fieldset class="form-step active" id="step-1" data-step="1">
                             <legend>Account Info</legend>
 
@@ -132,6 +136,7 @@
                             <button type="button" class="next-step auth-btn" data-next="2">Next</button>
                         </fieldset>
 
+                        <!-- password in signup -->
                         <fieldset class="form-step" id="step-2" data-step="2" hidden>
                             <legend>Password</legend>
 
@@ -151,9 +156,11 @@
                             <button type="button" class="next-step auth-btn" data-next="3">Next</button>
                         </fieldset>
 
+                        <!-- Accepting terms of condition when signing up -->
                         <fieldset class="form-step" id="step-3" data-step="3" hidden>
                             <legend>Confirm Your Details</legend>
 
+                            <!-- name and email shown again by JS to confirm -->
                             <div id="signup-review">
                                 <p><strong>Name:</strong> <span id="review-name"></span></p>
                                 <p><strong>Email:</strong> <span id="review-email"></span></p>
@@ -176,6 +183,7 @@
 
             </section>
 
+            <!-- Welcome panel is only shown when registration succeedss -->
             <section id="welcome-box" hidden>
                 <h1>Welcome back, <span id="welcome-name"></span>!</h1>
                 <p><a href="./index.html">Go to Home</a></p>

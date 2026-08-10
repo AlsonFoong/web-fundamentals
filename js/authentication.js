@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginPanel.hidden = false;
     });
 
-
+//Prevents enter from submitting the form and makes it go to the next step instead
     signupForm.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
+// Switches which step is shown and keeps the progress dots in sync
     function showStep(stepNum) {
         steps.forEach(step => {
             step.hidden = step.dataset.step !== String(stepNum);
@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const nextStepNumber = button.dataset.next;
 
+            // In step 3, copies and displays the name and email from step 1
             if (nextStepNumber === '3') {
                 document.getElementById('review-name').textContent = document.getElementById('signup-name').value;
                 document.getElementById('review-email').textContent = document.getElementById('signup-email').value;
@@ -82,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Makes sure each entry is valid when trying to move to the next step
     function validateStep(currentStep) {
         let isValid = true;
         const stepNum = currentStep.dataset.step;
@@ -107,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 emailError.textContent = 'Enter a valid email.';
                 isValid = false;
             } else {
+                // only checks for email already used if the format is valid
                 const users = JSON.parse(localStorage.getItem('vividlyUsers')) || [];
                 if (users.some(u => u.email === email.value.trim())) {
                     emailError.textContent = 'An account with this email already exists.';
@@ -139,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+// Final signup submit uses .stringify() since localStorage only stores strings
     signupForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -185,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('vividlyCurrentUser', JSON.stringify(matchedUser));
 
+    // swap the login section to welcome section when login is successful.
         authSection.hidden = true;
         welName.textContent = matchedUser.name;
         welPanel.hidden = false;
